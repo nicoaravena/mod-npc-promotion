@@ -13,7 +13,7 @@
 static bool npcPromotionEnabled, npcPromotionAnnounceEnable;
 static int npcPromotionCount, npcPromotionIpCount, npcPromotionMaxLevel,
     npcPromotionMoney, npcPromotionBag, npcPromotionBagAmount,
-    NpcPromotionMountReward;
+    NpcPromotionMountReward, npcPromotionHonor;
 static bool NpcPromotionWarriorTankEnabled, NpcPromotionWarriorDpsEnabled,
     npcPromotionEnableIpLimit, NpcPromotionBagEnable, NpcPromotionEquippedbags,
     NpcPromotionMountEnable;
@@ -39,6 +39,7 @@ void promotionPlayerTemplate(Player* player)
     player->SetUInt32Value(PLAYER_XP, 0);
 
     player->ModifyMoney(npcPromotionMoney);
+    player->ModifyHonorPoints(npcPromotionHonor);
 
     //Bags
     if (NpcPromotionBagEnable) {
@@ -844,6 +845,8 @@ public:
             NpcPromotionEquippedbags = sConfigMgr->GetBoolDefault("NpcPromotion.equippedbags", true);
             npcPromotionBag = sConfigMgr->GetIntDefault("NpcPromotion.bag", 20400);
             npcPromotionBagAmount = sConfigMgr->GetIntDefault("NpcPromotion.bagAmount", 4);
+
+            npcPromotionHonor = sConfigMgr->GetIntDefault("NpcPromotion.honor", 0);
 
             NpcPromotionMountEnable = sConfigMgr->GetBoolDefault("NpcPromotion.mountEnable", true);
             NpcPromotionMountReward = sConfigMgr->GetIntDefault("NpcPromotion.mountReward", 74856);

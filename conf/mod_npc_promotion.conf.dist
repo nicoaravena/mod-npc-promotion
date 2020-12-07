@@ -91,6 +91,18 @@ NpcPromotion.MaxLevel = 80
 NpcPromotion.money = 25000000
 
 #
+#		NpcPromotion.honor
+#
+#		Description:	Set amount of honor to give on promotion
+#
+#		Example:
+#				40000 - (Will give 40.000 honor points)
+#
+#		Default:     25000
+
+NpcPromotion.honor = 25000
+
+#
 #		Bag configuration
 #
 #		Description:	Set item id for the bag to give on promotion
